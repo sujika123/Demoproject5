@@ -1,0 +1,35 @@
+{% extends 'userhome.html' %}
+{% block content %}
+
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">View Event</h4>
+       <table class="table" >
+         <thead>
+    <tr>
+      <th>SI.NO</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Edit</th>
+      <th>Edit</th>
+    </tr>
+         </thead>
+           <tbody>
+    {% for i in data %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.description}}</td>
+      <td><img src="{{i.image.url}}" width="250px" height="2800px" ></td>
+
+      <td><a href="{% url 'eventupdate' i.id %}" class="btn btn-primary">Update</a></td>
+      <td><a href="{% url 'eventdelete' i.id %}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+   </tbody>
+  </table>
+   </div>
+</div>
+
+{% endblock %}

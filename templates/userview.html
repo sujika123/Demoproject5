@@ -1,0 +1,31 @@
+{% extends 'adminhome.html' %}
+{% block content %}
+
+<div class="card" style="color:black;">
+  <table>
+    <tr>
+      <th>SI.NO</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>Image</th>
+      <th>Edit</th>
+      <th>Edit</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.gender}}</td>
+      <td>{{i.age}}</td>
+      <td>{{i.address}}</td>
+      <td><img src="{{i.image.url}}" width="150px" height="160px" ></td>
+
+
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}
